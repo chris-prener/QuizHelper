@@ -11,11 +11,13 @@ set obs 25
 This line sets the number of observations (i.e. the number of questions) for the quiz. To make the quiz shorter or longer, edit the integer value on this line so that it corresponds with the length of your quiz.
 
 ### Details
-To generate the correct answers, uses a pseudo-random number function adapted from the [Stata Blog](http://blog.stata.com/2012/07/18/using-statas-random-number-generators-part-1/). The `runiform` command draws values from a uniform distribution over the values [0,1] (see `help runiform` or follow [this link](http://www.stata.com/help.cgi?runiform() for additional details)). These are altered with the function
+To generate the correct answers, uses a pseudo-random number function adapted from the [Stata Blog](http://blog.stata.com/2012/07/18/using-statas-random-number-generators-part-1/). The `runiform` command draws values from a uniform distribution over the values [0,1]. These are altered with the function
 ```
 floor((`b'-`a'+1)*runiform()+`a')
 ```
 to generate integer values between `a` and `b` where `a=1` and `b=4` (again assuming four possible answers lettered 'a' through 'b').
+
+For more on `runiform`, see `help runiform` or follow [this link](http://www.stata.com/help.cgi?runiform() for additional details).
 
 ### Repository Contents
 This repository contains files for:
